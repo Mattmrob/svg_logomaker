@@ -40,24 +40,20 @@ inquirer.prompt([
     }
 
     let shapeChoice = ""
-    let insertShape = ""
 
     switch (res.shape) {
         case "Circle":
-            insertShape = `<circle cx="150" cy="100" r="80" fill="${res.shapeColor}" />`
             shapeChoice = new Shapes.Circle(res.text, res.textColor, res.shape, res.shapeColor)
             break;
         case "Triangle":
-            insertShape = `<polygon points="150,30 40,130 260,130"  fill="${res.shapeColor}" />`
             shapeChoice = new Shapes.Triangle(res.text, res.textColor, res.shape, res.shapeColor)
             break;
         case "Square":
-            insertShape = `<rect x="75" y="25" width="150" height="150" fill="${res.shapeColor}" />`
             shapeChoice = new Shapes.Square(res.text, res.textColor, res.shape, res.shapeColor)
             break;
     }
 
-    shapeChoice.render(insertShape);
+    shapeChoice.render(shapeChoice.insertShape);
 
     // const renderShape = new RenderShape();
     // renderShape.render(res);
