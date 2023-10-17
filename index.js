@@ -1,11 +1,11 @@
 const inquirer = require('inquirer');
 const Shapes = require("./lib/shapes.js");
-// Shapes includes Circle, Square, and Triangle
+// Shapes includes Circle, Square, and Triangle - main class also includes render function
 const fs = require('fs');
 
 
+// initialize app function
 const init = () => {
-
 
 inquirer.prompt([
 
@@ -30,6 +30,7 @@ inquirer.prompt([
         name: "shapeColor",
         message: "Please enter a color keyword or hexadecimal for your shape's color.",
     },
+
 ]).then(res => {
 
     if (res.text.length > 3) {
@@ -37,9 +38,8 @@ inquirer.prompt([
     } else if (res.text.length === 0) {
         return console.log("You must include at least one character for your logo!")
     }
-
+    // making sure logo is a maximum of 3 long and not zero
     
-
     let shapeChoice = ""
 
     switch (res.shape) {
@@ -52,12 +52,15 @@ inquirer.prompt([
         case "Square":
             shapeChoice = new Shapes.Square(res.text, res.textColor, res.shape, res.shapeColor)
             break;
-    }
+    }   
+    // depending on user's shape selection, an appropriate constructor is made for rendering
 
     shapeChoice.render();
+    // render selected choice
 
     })
 
 }
 
 init();
+// initialize app
