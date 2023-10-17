@@ -10,7 +10,7 @@ inquirer.prompt([
     {
         type: 'input',
         name: "text",
-        message: "Please enter up to three characters for your logo"
+        message: "Please enter up to three characters for your logo",
     },
     {
         type: "input",
@@ -28,8 +28,12 @@ inquirer.prompt([
         name: "shapeColor",
         message: 'What color would you like the background shape to be?',
     },
-]).then(answers => {
-    console.log(answers)
+]).then(res => {
+
+    const shape = new Shapes(res.text, res.textColor, res.shape, res.shapeColor)
+
+    console.log(shape);
+
     })
 
 }
