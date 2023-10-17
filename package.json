@@ -1,4 +1,11 @@
 {
+  "name": "SVG-logo-generator",
+  "version": "0.1",
+  "description": "Program for users to generate their own basic custom svg logo",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "inquirer": "^9.2.11",
     "jest": "^29.7.0"
