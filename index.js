@@ -54,7 +54,7 @@ inquirer.prompt([
             break;
     }
 
-    shapeChoice.render(shapeChoice.insertShape);
+    shapeChoice.render();
 
     })
 
