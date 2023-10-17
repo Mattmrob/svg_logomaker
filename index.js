@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
-const Shapes = require("./lib/shapes");
+const Shapes = require("./lib/shapes.js");
+const RenderShape = require("./lib/renderShape.js")
 const fs = require('fs');
 
 
@@ -36,9 +37,12 @@ inquirer.prompt([
         return console.log("You must include at least one character for your logo!")
     }
 
-    const shape = new Shapes(res.text, res.textColor, res.shape, res.shapeColor)
+    const renderShape = new RenderShape();
+    renderShape.render(res);
 
-    console.log(shape);
+    // const shape = new Shapes(res.text, res.textColor, res.shape, res.shapeColor)
+
+    // console.log(shape);
 
     })
 
