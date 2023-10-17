@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const Shapes = require("./lib/shapes.js");
 // Shapes includes Circle, Square, and Triangle
-const RenderShape = require("./lib/renderShape.js")
 const fs = require('fs');
 
 
@@ -39,6 +38,8 @@ inquirer.prompt([
         return console.log("You must include at least one character for your logo!")
     }
 
+    
+
     let shapeChoice = ""
 
     switch (res.shape) {
@@ -54,13 +55,6 @@ inquirer.prompt([
     }
 
     shapeChoice.render(shapeChoice.insertShape);
-
-    // const renderShape = new RenderShape();
-    // renderShape.render(res);
-
-    // const shape = new Shapes(res.text, res.textColor, res.shape, res.shapeColor)
-
-    // console.log(shape);
 
     })
 
